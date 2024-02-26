@@ -30,7 +30,7 @@ Make sure you have the following installed on your machine before moving onto th
 3. Open your local Terminal and navigate to the unzipped folder directory. For example:
 
 ```bash
-    cd Desktop/WordleBot
+    cd ~/Desktop/WordleBot
 ```
 
 4. Run the script in your terminal:
