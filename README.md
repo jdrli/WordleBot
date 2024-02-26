@@ -32,7 +32,7 @@ Make sure you have the following installed on your machine before moving onto th
     cd Desktop/WordleBot
 ```
 
-4. Run the script in your terminal by typing:
+1. Run the script in your terminal:
 ```bash
    main.py
 ```
