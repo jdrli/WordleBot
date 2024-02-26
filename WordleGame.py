@@ -3,6 +3,7 @@ import os
 import re
 
 import FilterPossibleWords
+from webscrape import webscraper
 
 current_directory = os.getcwd()
 
@@ -18,7 +19,6 @@ answer_list = wordleanswers.read().split("\n")
 
 
 class Wordle:
-
     list_of_commonwords = []
     list_of_guessing_words = []
     list_of_answers = []
@@ -34,21 +34,10 @@ class Wordle:
     #RESULTS
     ATTEMPTS = 0
 
-
-
     def __init__(self, answer, wordleStrategy, mode):
         self.answer = answer
         self.strategy = wordleStrategy
         self.mode = mode
-
-    def inputResult(self):
-        while True:
-
-            result = input('Result? ')
-            if self.valid_result(result):
-                return result
-            else:
-                print("Invalid result")
 
     def valid_result(self, result):
         if len(result) != 5:
@@ -74,7 +63,6 @@ class Wordle:
         return ''.join(input)
 
     def reset_lists(self):
-
         self.list_of_commonwords.clear()
         self.list_of_guessing_words.clear()
         self.list_of_answers.clear()
@@ -94,7 +82,7 @@ class Wordle:
     def benchmark(self):
         information = 13.66
         guess = 'salet'
-        input = self.get_input_from_words(guess, self.answer)
+        input = webscraper.make_guess(guess, (self.ATTEMPTS))
         optimizedList = FilterPossibleWords.analyze_result(guess, input, self.list_of_guessing_words)
         probability = 1/len(optimizedList)
         salet_information = 13.66 - math.log(1/probability, 2)
@@ -105,32 +93,25 @@ class Wordle:
         while input != '22222':
             if self.ATTEMPTS == 1 and self.mode == "NORMAL":
                 self.ATTEMPTS +=1
-
                 guess = self.retrieve_bin(input)
-                input = self.get_input_from_words(guess, self.answer)
+                input = webscraper.make_guess(guess, (self.ATTEMPTS))
                 optimizedList = FilterPossibleWords.analyze_result(guess, input, self.list_of_guessing_words)
                 probabilitytwo = 1 / len(optimizedList)
                 second_information = uncertainty - math.log(1/probabilitytwo, 2)
                 uncertainty = uncertainty - second_information
 
             else:
-
                 guess = self.strategy.get_word(input, guess, commonwords_to_list, optimizedList, uncertainty)
-                # Get input answer from guess
-                input = self.get_input_from_words(guess, self.answer)
+                input = webscraper.make_guess(guess, (self.ATTEMPTS))
                 self.ATTEMPTS += 1
                 probabilityrepeat = 1 / len(optimizedList)
                 repeat_information = uncertainty - math.log(1 / probabilityrepeat, 2)
                 uncertainty = uncertainty - repeat_information
-
-
         self.reset_lists()
 
-
-
     def solve_wordle(self, first_guess):
-        print("Guess with word: salet")
-        input = self.inputResult()
+        guess = "salet"
+        input = webscraper.make_guess(guess, (self.ATTEMPTS))
         guess = first_guess
         self.ATTEMPTS +=1
         optimizedList = FilterPossibleWords.analyze_result(guess, input, self.list_of_guessing_words)
@@ -139,29 +120,21 @@ class Wordle:
         uncertainty = 13.66 - salet_information
 
         while input != '22222':
-
-
-
             if self.ATTEMPTS == 1 and self.mode == "NORMAL":
                 self.ATTEMPTS += 1
                 guess = self.retrieve_bin(input)
-                print("Guess with word:" + guess)
-                input = self.inputResult()
+                input = webscraper.make_guess(guess, (self.ATTEMPTS))
                 optimizedList = FilterPossibleWords.analyze_result(guess, input, self.list_of_guessing_words)
                 probabilitytwo = 1 / len(optimizedList)
                 second_information = uncertainty - math.log(1 / probabilitytwo, 2)
                 uncertainty = uncertainty - second_information
             else:
                 self.ATTEMPTS += 1
-
                 guess = self.strategy.get_word(input, guess, commonwords_to_list, optimizedList, uncertainty)
                 probabilityrepeat = 1 / len(optimizedList)
                 repeat_information = uncertainty - math.log(1 / probabilityrepeat, 2)
                 uncertainty = uncertainty - repeat_information
-                print("Guess with word:" + guess)
-                input = self.inputResult()
-
-
+                input = webscraper.make_guess(guess, self.ATTEMPTS)
 
         self.reset_lists()
 

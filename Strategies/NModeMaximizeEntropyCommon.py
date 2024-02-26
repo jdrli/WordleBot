@@ -21,8 +21,6 @@ def get_input_from_words(guess, correct_word):
 
 
 def get_word(answer_input, word, common_words_list, guesses_word_list, uncertainty):
-
-
     optimizedList = FilterPossibleWords.analyze_result(word, answer_input, guesses_word_list)
     if len(optimizedList) == 1:
         return optimizedList[0]
@@ -51,7 +49,10 @@ def get_word(answer_input, word, common_words_list, guesses_word_list, uncertain
                 if information > entropy:
                     entropy = information
                     highest_entropy_words.append(small_word)
-    return highest_entropy_words[-1]
+    if highest_entropy_words:
+        return highest_entropy_words[-1]
+    else:
+        return None
 
 def get_expected_max_entropy(word, optimized_list):
 
@@ -60,8 +61,6 @@ def get_expected_max_entropy(word, optimized_list):
     empty_list.extend(optimized_list)
 
     added_bits = 0
-
-
     for optimize_word in optimized_list:
 
         input = get_input_from_words(word, optimize_word)
@@ -76,7 +75,6 @@ def get_expected_max_entropy(word, optimized_list):
             added_bits += math.log(1/probability, 2)
 
     expected_information = added_bits/len(empty_list)
-
     return expected_information
 
 
