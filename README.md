@@ -14,6 +14,7 @@ Make sure you have the following installed on your machine before moving onto th
 
 - Python 3.x
 - Selenium 4.x
+  - The installation can be a bit finicky but I found this [tutorial](https://selenium-python.readthedocs.io/installation.html) to be incredibly succinct and helpful!
 - Google Chrome (Current)
 - Chrome WebDriver 
   - Since Chrome is now updated past the Chrome WebDriver's latest release, you can find download links for the current Chrome Browser [here](https://googlechromelabs.github.io/chrome-for-testing/).
