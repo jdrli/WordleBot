@@ -1,0 +1,68 @@
+The common words list used is a word list that comprises the intersection of 5 letter words occurring in three source lists:
+  - wikipedia's list of most 100k most common words in the english language
+  - the american english dictionary file on my laptop
+  - the british english dictionary file on my laptop
+
+  SOURCE: https://gist.github.com/shmookey/b28e342e1b1756c4700f42f17102c2ff
+
+The Wordle answers list comprises all known Wordle answers from the source code in alphabetical order
+
+   Source: https://gist.github.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b
+
+The Wordle word list comprises the list of all possible words that are potentially valid guesses in
+wordle, taken straight from the game's source code.
+    Source: https://github.com/tabatkins/wordle-list/blob/main/words
+
+Here are the benchmark performances of each strategy ran against all 2315 possible Wordle games
+
+Normal Mode:
+
+Maximizing entropy for every valid wordle guessing word and common words list:
+
+*****RESULT*****
+Average guesses: 3.6259179265658745
+Solved under 7 guesses: 2307/2315
+Words solved above 6 tries: 8
+Words solved above: ['freed', 'hitch', 'hover', 'pound', 'water', 'wight', 'witch', 'wound']
+***
+
+Hard Mode:
+
+Maximizing entropy for every valid wordle guessing word and common words list:
+
+*****RESULT*****
+Average guesses: 3.800779558250325
+Solved under 7 guesses: 2294/2315
+Words solved above 6 tries: 15
+Words solved above: ['bound', 'boxer', 'creak', 'dolly', 'fight', 'found', 'goose', 'hatch', 'jaunt', 'joker', 'match', 'right', 'rower', 'stave', 'wooer']
+
+Maximizing entropy for every valid wordle guessing word without common words list:
+
+*****RESULT*****
+Average guesses: 4.247516198704104
+Solved under 7 guesses: 2225/2315
+Words solved above 6 tries: 90
+Words solved above: ['ankle', 'aping', 'boozy', 'boxer', 'buggy', 'clove', 'corer', 'cover', 'crass', 'craze', 'diver', 'dutch', 'fewer',
+'fixer', 'frank', 'gazer', 'grant', 'gully', 'hatch', 'hitch', 'hover', 'irate', 'jelly', 'joker', 'jolly', 'krill',
+'ladle', 'layer', 'liner', 'maker', 'mammy', 'might', 'mound', 'mushy', 'musty', 'pasty', 'patch', 'patty', 'penny',
+'pitch', 'pound', 'prank', 'prone', 'punch', 'purer', 'pushy', 'putty', 'rider', 'right', 'river', 'rover', 'rower',
+'saner', 'sassy', 'savvy', 'sever', 'shame', 'slush', 'sneer', 'spool', 'staid', 'state', 'stave', 'steer', 'stoic',
+'stout', 'stove', 'straw', 'stray', 'swell', 'taint', 'taper', 'taunt', 'tight', 'tripe', 'trite', 'vaunt', 'wager',
+'watch', 'water', 'wider', 'wight', 'willy', 'witch', 'witty', 'woody', 'worse', 'wrack', 'wrest', 'zesty']
+
+Randomly selecting words from possible answers word list being filtered every guess iteration:
+
+*****RESULT*****
+Average guesses: 4.719222462203024
+Solved under 7 guesses: 2104/2315
+Words solved above 6 tries: 211
+Words solved above: ['agent', 'agile', 'algae', 'amble', 'aping', 'aware', 'bacon', 'badge', 'baggy', 'basis', 'belly', 'berry', 'biddy', 'bitty', 'bongo', 'bonus', 'booby', 'booty', 'booze', 'boxer', 'brass', 'bread', 'buddy', 'bully', 'bushy', 'butch', 'buyer', 'cagey', 'canon', 'carry', 'carve', 'catch', 'cheer', 'chore', 'class', 'cleft', 'clone', 'coral', 'corer', 'coven', 'cover', 'cower', 'crack', 'crane', 'crass', 'crate', 'crave', 'creed', 'creek', 'cress', 'curve', 'daddy', 'dairy', 'dandy', 'defer', 'ditch', 'diver', 'dolly', 'dowel', 'draft', 'drake', 'dried', 'drill', 'drown', 'fanny', 'fatal', 'fault', 'fight', 'filly', 'finer', 'fixer', 'flame', 'flank', 'focus', 'found', 'freer', 'fried', 'froth', 'froze', 'fully', 'funny', 'gauge', 'gayer', 'girth', 'given', 'glare', 'glass', 'golly', 'goner', 'goofy', 'goose', 'grace', 'grape', 'grate', 'grave', 'gripe', 'handy', 'happy', 'hardy', 'hatch', 'hater', 'hilly', 'hippy', 'hobby', 'hutch', 'jelly', 'joist', 'jolly', 'jumpy', 'krill', 'lager', 'layer', 'lower', 'loyal', 'mamma', 'manly', 'might', 'moose', 'mover', 'munch', 'nerve', 'night', 'notch', 'otter', 'paint', 'pasta', 'paste', 'patch', 'pedal', 'penny', 'piggy', 'pitch', 'pixie', 'pizza', 'plead', 'polka', 'poppy', 'power', 'probe', 'prone', 'prose', 'prove', 'prude', 'puppy', 'rabid', 'rainy', 'rarer', 'rebel', 'relic', 'renew', 'rider', 'river', 'roger', 'rower', 'safer', 'sappy', 'savvy', 'scale', 'scion', 'scram', 'scrap', 'serum', 'sever', 'shank', 'shore', 'slime', 'smart', 'snake', 'sneer', 'spark', 'spasm', 'stake', 'steep', 'steer', 'stoke', 'stony', 'store', 'storm', 'study', 'sweep', 'swell', 'tabby', 'tacky', 'tamer', 'taper', 'taste', 'tight', 'trait', 'tripe', 'urine', 'valor', 'vaunt', 'verve', 'villa', 'viper', 'vogue', 'vouch', 'wacky', 'wafer', 'watch', 'waxen', 'weave', 'where', 'wight', 'winch', 'woken', 'woody', 'wooer', 'wooly', 'woozy', 'zonal']
+
+Randomly selecting words from possible answers word list being filtered every guess iteration,
+but will select a random common word instead if it is in the filtered list:
+
+*****RESULT*****
+Average guesses: 4.042764578833693
+Solved under 7 guesses: 2252/2315
+Words solved above 6 tries: 63
+Words solved above: ['alike', 'axion', 'bawdy', 'bezel', 'biddy', 'binge', 'boxer', 'brake', 'broke', 'buddy', 'caper', 'chard', 'corer', 'cover', 'crane', 'defer', 'dilly', 'disco', 'dolly', 'dryer', 'erode', 'fight', 'foyer', 'freed', 'gaffe', 'gayer', 'geeky', 'giver', 'goner', 'graze', 'grill', 'hatch', 'hippy', 'hound', 'hover', 'jazzy', 'joker', 'kitty', 'melee', 'mound', 'nosey', 'ovate', 'pasta', 'pizza', 'power', 'prime', 'pushy', 'roger', 'rower', 'sassy', 'savor', 'shame', 'skier', 'stash', 'stoke', 'taunt', 'trope', 'wacky', 'waste', 'wheel', 'willy', 'witch', 'wreak']
