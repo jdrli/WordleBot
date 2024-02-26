@@ -10,14 +10,22 @@ I decided it would be fun to add some sort of automation component to this I was
 In the future, I plan on updating the benchmarking method that was used previously before the process was automated and working on documentation.
 
 ## Getting Started
-Make sure you have the following installed on your machine:
+Make sure you have the following installed on your machine before moving onto the usage methods below:
 
 - Python 3.x
-- Selenium
+- Selenium 4.x
+- Google Chrome (Current)
 - Chrome WebDriver 
   - Since Chrome is now updated past the Chrome WebDriver's latest release, you can find download links for the current Chrome Browser [here](https://googlechromelabs.github.io/chrome-for-testing/).
 
-### Tutorial
-Download the 
+### Usage Method 1 (IDE)
+1. Download ZIP File of the repository.
+2. Unzip and open the folder in your preferred IDE.
+3. Run main.py
+
+### Usage Method 2 (Terminal)
+1. Download ZIP File of the repository.
+2. Unzip file and place somewhere easily accessible.
+3. Open your local Terminal
 
 
