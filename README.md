@@ -9,7 +9,7 @@ I decided it would be fun to add some sort of automation component to this I was
 
 In the future, I plan on updating the benchmarking method that was used previously before the process was automated and working on documentation.
 
-## Getting Started
+## Tutorial
 Make sure you have the following installed on your machine before moving onto the usage methods below:
 
 - Python 3.x
@@ -26,6 +26,14 @@ Make sure you have the following installed on your machine before moving onto th
 ### Usage Method 2 (Terminal)
 1. Download ZIP File of the repository.
 2. Unzip file and place somewhere easily accessible.
-3. Open your local Terminal
+3. Open your local Terminal and navigate to the unzipped folder directory. For example:
 
+```bash
+    cd Desktop/WordleBot
+```
+
+4. Run the script in your terminal by typing:
+```bash
+   main.py
+```
 
