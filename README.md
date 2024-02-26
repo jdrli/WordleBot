@@ -9,7 +9,7 @@ I decided it would be fun to add some sort of automation component to this I was
 
 In the future, I plan on updating the benchmarking method that was used previously before the process was automated and working on documentation.
 
-## Addendums
+## Getting Started
 Make sure you have the following installed on your machine:
 
 - Python 3.x
@@ -17,6 +17,7 @@ Make sure you have the following installed on your machine:
 - Chrome WebDriver 
   - Since Chrome is now updated past the Chrome WebDriver's latest release, you can find download links for the current Chrome Browser [here](https://googlechromelabs.github.io/chrome-for-testing/).
 
-
+### Tutorial
+Download the 
 
 
